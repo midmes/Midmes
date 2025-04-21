@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - MIDMES</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO/3D3l7X+c1eZ7FcvVuBpM4SyA7oYQ3V0d9fRZyMPBv9HZ7gLz4U8K7AXf2sK2nN7RY0q3kaU9P03w1c1Kp9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background-color: #0d0158;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+    .contact-section {
+      padding: 60px 20px;
+    }
+    .glow {
+      text-shadow: 0 0 2px #fff, 0 0 3px #0ff;
+    }
+    .form-control, .form-control:focus {
+      background-color: transparent;
+      border: 1px solid #00f2ff;
+      color: white;
+      box-shadow: none;
+    }
+    .btn-glow {
+      background-color: transparent;
+      border: 2px solid #00f2ff;
+      color: #00f2ff;
+      transition: 0.3s;
+    }
+    .btn-glow:hover {
+      background-color: #00f2ff;
+      color: #0d0158;
+      box-shadow: 0 0 5px #00f2ff;
+    }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+    }
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container contact-section">
+    <h1 class="text-center glow">Contact MIDMES</h1>
+    <p class="text-center">We'd love to hear from you. Reach out anytime.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="https://formsubmit.co/contactmidmes@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://midmes.com/thank-you.html">
+          
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" name="name" required />
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" name="email" required />
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject" name="subject" />
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-glow">Send Message</button>
+          </div>
+        </form>
+        
+        <div class="mt-5 text-center">
+          <h5 class="glow">Call Now: <a href="tel:+251912642748" class="text-info">+251-912-64-27-48</a></h5>
+          <p>Email: <a href="mailto:contact@midmes.com" class="text-info">contact@midmes.com</a></p>
+          <p>Location: Addis Ababa, Ethiopia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer mt-5 py-3 border-top text-center">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/midmes9/" target="_blank"><i class="fab fa-instagram text-info" style="font-size: 0.9rem;"></i><img src="https://img.icons8.com/?size=80&id=BrU2BBoRXiWq&format=png" alt="Instagram"></a>
+      <a href="https://web.facebook.com/profile.php?id=61575259718808" target="_blank"><i class="fab fa-facebook-f text-info" style="font-size: 0.9rem;"></i><img src="https://img.icons8.com/?size=80&id=z657ovoGgS2o&format=png" alt="Facebook"></a>
+      <a href="https://www.tiktok.com/@midmes" target="_blank"><i class="fab fa-tiktok text-info" style="font-size: 0.9rem;"></i><img src="https://img.icons8.com/?size=50&id=118638&format=png" alt="TikTok"></a>
+    </div>
+    <p class="text-light m-0" style="font-size: 0.8rem;">&copy; 2025 MIDMES. All rights reserved.</p>
+  </footer>
+</body>
+</html>

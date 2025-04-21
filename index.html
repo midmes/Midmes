@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - MIDMES</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #02010a;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #02010a;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #0d00a4;
+    }
+
+    .logo img {
+      height: 50px;
+      filter: drop-shadow(0 0 5px #0d00a4);
+    }
+
+    nav a {
+      color: #ffffff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #0d00a4;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #0d00a4;
+    }
+
+    .hero-section {
+      background: url('https://www.pexels.com/photo/abstract-pattern-of-3d-dark-cubes-in-perspective-31687153/') no-repeat center center/cover;
+      padding: 120px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-section h1 {
+      font-size: 56px;
+      font-weight: 800;
+      text-shadow: 0 0 15px #0d00a4;
+    }
+
+    .hero-section h3 {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #ccccff;
+    }
+
+    .hero-section p {
+      max-width: 800px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ddddff;
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      max-width: 900px;
+      margin: auto;
+      color: #bbbbff;
+    }
+
+    .bg-dark-blue {
+      background-color: #07012d;
+    }
+
+    .btn-primary {
+      background-color: #0d00a4;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a00ff;
+    }
+
+    footer {
+      background-color: #0d0158;
+      padding: 30px 20px;
+      text-align: center;
+      color: #bbbbff;
+      border-top: 1px solid #1a00ff;
+      margin-top: 40px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://i.ibb.co/YSFKsQ4/midmes-logo.png" alt="MIDMES Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero-section" data-aos="fade-up">
+    <h1>MIDMES.</h1>
+    <h3>Where Creativity Meets Strategy in the Digital World</h3>
+    <p><a href="contact.html" class="btn btn-primary mt-3">Contact Us</a></p>
+  </div>
+
+  <div class="section bg-dark-blue" data-aos="fade-right">
+    <h2>Our Services</h2>
+    <p>We offer Web Design, SEO, Branding, and Digital Advertising that empower your business and bring your vision to life.</p>
+  </div>
+
+  <div class="section bg-dark-blue" data-aos="fade-up">
+    <h2>Creative That Converts</h2>
+    <p>Every piece of content we craft is designed to not just grab attention—but to drive results. Engagement. Leads. Growth. That’s our language.</p>
+  </div>
+
+  <div class="section" data-aos="fade-left">
+    <h2>We Turn Ideas Into Impact</h2>
+    <p>From bold branding to dynamic digital campaigns, MIDMES transforms visions into compelling realities that move people and brands forward.</p>
+  </div>
+  
+  <div class="section" data-aos="fade-right">
+    <h2>Your Digital Edge</h2>
+    <p>We live where technology meets storytelling. MIDMES combines data, design, and psychology to keep your brand ahead of the curve.</p>
+  </div>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 MIDMES Digital Agency | All rights reserved</p>
+    <p>
+      <a href="mailto:contactmidmes@gmail.com"><i class="fas fa-envelope"></i> contactmidmes@gmail.com</a>
+      <a href="tel:+251979029768"><i class="fas fa-phone"></i> +251979029768</a>
+    </p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575259718808" target="_blank"><i class="fab fa-facebook-f text-info" style="font-size: 0.9rem;"></i></a>
+      <a href="https://www.tiktok.com/@midmes" target="_blank"><i class="fab fa-tiktok text-info" style="font-size: 0.9rem;"></i></a>
+      <a href="https://www.instagram.com/midmes9/" target="_blank"><i class="fab fa-instagram text-info" style="font-size: 0.9rem;"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
+</body>
+
+</html>
