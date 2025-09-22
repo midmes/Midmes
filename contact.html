@@ -1,98 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - MIDMES</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO/3D3l7X+c1eZ7FcvVuBpM4SyA7oYQ3V0d9fRZyMPBv9HZ7gLz4U8K7AXf2sK2nN7RY0q3kaU9P03w1c1Kp9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      background-color: #0d0158;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      overflow-x: hidden;
-    }
-    .contact-section {
-      padding: 60px 20px;
-    }
-    .glow {
-      text-shadow: 0 0 2px #fff, 0 0 3px #0ff;
-    }
-    .form-control, .form-control:focus {
-      background-color: transparent;
-      border: 1px solid #00f2ff;
-      color: white;
-      box-shadow: none;
-    }
-    .btn-glow {
-      background-color: transparent;
-      border: 2px solid #00f2ff;
-      color: #00f2ff;
-      transition: 0.3s;
-    }
-    .btn-glow:hover {
-      background-color: #00f2ff;
-      color: #0d0158;
-      box-shadow: 0 0 5px #00f2ff;
-    }
-    .footer {
-      padding: 20px;
-      text-align: center;
-      border-top: 1px solid #333;
-      margin-top: 40px;
-    }
-    .social-icons img {
-      width: 30px;
-      height: 30px;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
-    }
 
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
-  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact MIDMES - Digital Marketing Agency | Get In Touch</title>
+  <meta name="description" content="Contact MIDMES digital marketing agency for web design, SEO, branding, and digital advertising services. Let's discuss your project today.">
+  <meta name="keywords" content="contact MIDMES, digital marketing agency, web design, SEO, branding, Ethiopia">
+  <meta name="author" content="MIDMES">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container contact-section">
-    <h1 class="text-center glow">Contact MIDMES</h1>
-    <p class="text-center">We'd love to hear from you. Reach out anytime.</p>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form action="https://formsubmit.co/contactmidmes@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://midmes.com/thank-you.html">
-          
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Your Name" name="name" required />
+  <!-- Header & Navigation -->
+  <header id="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="midmes-logo.png" alt="MIDMES Digital Marketing Agency Logo">
+      </div>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero contact-hero">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="contact-form" data-aos="fade-up">
+            <form action="https://formsubmit.co/contactmidmes@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="thank-you.html">
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Subject" name="subject">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
           </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Your Email" name="email" required />
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p><a href="mailto:contactmidmes@gmail.com">contactmidmes@gmail.com</a></p>
           </div>
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Subject" name="subject" />
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-info">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p><a href="tel:+251979029768">+251 979 029 768</a></p>
           </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Your Message" name="message" required></textarea>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-info">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Location</h3>
+            <p>Addis Ababa, Ethiopia</p>
           </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-glow">Send Message</button>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12" data-aos="fade-up">
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i class="fas fa-map-marked-alt"></i>
+              <p>Interactive Map Location</p>
+            </div>
           </div>
-        </form>
-        
-        <div class="mt-5 text-center">
-          <h5 class="glow">Call Now: <a href="tel:+251979029768" class="text-info">+251-979-02-97-68</a></h5>
-          <p>Email: <a href="mailto:contact@midmes.com" class="text-info">contact@midmes.com</a></p>
-          <p>Location: Addis Ababa, Ethiopia</p>
         </div>
       </div>
     </div>
-  </div>
-  <footer class="footer mt-5 py-3 border-top text-center">
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our services</p>
+      </div>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              How long does a typical website project take?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The timeline for a website project depends on its complexity. A basic website typically takes 2-4 weeks, while more complex projects can take 8-12 weeks. We'll provide a detailed timeline after our initial consultation.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Do you offer ongoing support after project completion?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer various ongoing support and maintenance packages to ensure your website remains up-to-date, secure, and performing optimally. We can discuss the best option for your needs.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              What industries do you work with?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We work with businesses across various industries including retail, hospitality, healthcare, technology, education, and more. Our strategies are tailored to each industry's unique needs and challenges.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="text-light m-0" style="font-size: 0.8rem;">&copy; 2025 MIDMES. All rights reserved.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo" data-aos="fade-up">
+        <img src="midmes-logo.png" alt="MIDMES Logo">
+      </div>
+      <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+        <p>© 2025 MIDMES Digital Agency. All rights reserved.</p>
+        <p>Addis Ababa, Ethiopia</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

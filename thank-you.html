@@ -1,41 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You - MIDMES</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0d0158;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    .glow {
-      text-shadow: 0 0 3px #fff, 0 0 6px #00f2ff;
-    }
-    .btn-home {
-      margin-top: 30px;
-      background-color: transparent;
-      border: 2px solid #00f2ff;
-      color: #00f2ff;
-      padding: 10px 20px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn-home:hover {
-      background-color: #00f2ff;
-      color: #0d0158;
-      box-shadow: 0 0 5px #00f2ff;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - MIDMES Digital Marketing Agency</title>
+  <meta name="description" content="Thank you for contacting MIDMES digital marketing agency. We'll get back to you shortly.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1 class="glow">Thank You!</h1>
-  <p>Your message has been successfully sent.<br>We'll get back to you shortly.</p>
-  <a href="index.html" class="btn-home">Back to Home</a>
+  <!-- Header & Navigation -->
+  <header id="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="midmes-logo.png" alt="MIDMES Digital Marketing Agency Logo">
+      </div>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Thank You Section -->
+  <section class="thank-you-section">
+    <div class="container">
+      <div class="thank-you-content" data-aos="fade-up">
+        <div class="checkmark">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>Thank You!</h1>
+        <p>Your message has been successfully sent. We'll get back to you shortly.</p>
+        <p>In the meantime, feel free to explore our website to learn more about our services.</p>
+        <div class="action-buttons">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Next Section -->
+  <section class="section next-steps">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>What Happens Next?</h2>
+        <p>Here's what you can expect after contacting us</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Initial Response</h3>
+            <p>We'll respond to your inquiry within 24 hours to discuss your project needs.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Consultation</h3>
+            <p>We'll schedule a detailed consultation to understand your goals and requirements.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Proposal</h3>
+            <p>We'll prepare a customized proposal with project timeline and investment details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo" data-aos="fade-up">
+        <img src="midmes-logo.png" alt="MIDMES Logo">
+      </div>
+      <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright" data-aos="fade-up" data-aos-delay="300">
+        <p>© 2025 MIDMES Digital Agency. All rights reserved.</p>
+        <p>Addis Ababa, Ethiopia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
