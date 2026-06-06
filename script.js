@@ -1,172 +1,153 @@
-// Initialize AOS
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
+// Initialize AOS, GSAP ScrollTrigger, WebGL Background + Counters
+AOS.init({ duration: 1000, once: true, offset: 100 });
+
+// Custom cursor
+const dot = document.querySelector('.cursor-dot');
+const outline = document.querySelector('.cursor-outline');
+document.addEventListener('mousemove', (e) => {
+  dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  outline.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+// Header scroll + back to top
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+  const backBtn = document.getElementById('back-to-top');
+  if(window.scrollY > 600) backBtn.classList.add('visible');
+  else backBtn.classList.remove('visible');
+});
+// Mobile menu
+const toggleBtn = document.getElementById('menu-toggle');
+const nav = document.getElementById('main-nav');
+if(toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    toggleBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
   });
-  
-  // Header scroll effect
-  const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  
-    // Back to top button
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 500) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
-    }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
   });
-  
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mainNav = document.getElementById('main-nav');
-  
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      
-      if (mainNav.classList.contains('active')) {
-        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-      } else {
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-      }
-    });
-  
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('#main-nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-      });
-    });
-  }
-  
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
+});
+
+// Hero stat counters
+function animateHeroNumbers() {
+  const heroNumbers = document.querySelectorAll('.stat-number-hero');
+  heroNumbers.forEach(el => {
+    const target = parseInt(el.getAttribute('data-count'));
+    let current = 0;
+    const step = target / 50;
+    const updater = setInterval(() => {
+      current += step;
+      if(current >= target) { el.innerText = target; clearInterval(updater); }
+      else el.innerText = Math.floor(current);
+    }, 25);
   });
-  
-  // Create particles for hero section
-  function createParticles() {
-    const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
-    
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      
-      // Random size between 3 and 8 pixels
-      const size = Math.random() * 5 + 3;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      
-      // Random position
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.top = `${Math.random() * 100}%`;
-      
-      // Random animation duration between 10 and 20 seconds
-      const duration = Math.random() * 10 + 10;
-      particle.style.animationDuration = `${duration}s`;
-      
-      // Random delay
-      particle.style.animationDelay = `${Math.random() * 5}s`;
-      
-      particlesContainer.appendChild(particle);
-    }
-  }
-  
-  // Animate stats counter
-  function animateStats() {
-    const statElements = document.querySelectorAll('.stat-number');
-    
-    statElements.forEach(stat => {
-      const target = parseInt(stat.getAttribute('data-count'));
-      const duration = 2000; // 2 seconds
-      const steps = 60; // 60 steps
-      const increment = target / steps;
-      let current = 0;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        stat.textContent = Math.round(current);
-      }, duration / steps);
-    });
-  }
-  
-  // Form validation
-  function initFormValidation() {
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-      form.addEventListener('submit', (e) => {
-        let valid = true;
-        const inputs = form.querySelectorAll('input[required], textarea[required]');
-        
-        inputs.forEach(input => {
-          if (!input.value.trim()) {
-            valid = false;
-            input.classList.add('is-invalid');
-          } else {
-            input.classList.remove('is-invalid');
-          }
-        });
-        
-        if (!valid) {
-          e.preventDefault();
-          
-          // Scroll to first invalid input
-          const firstInvalid = form.querySelector('.is-invalid');
-          if (firstInvalid) {
-            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }
-      });
-    });
-  }
-  
-  // Initialize when page loads
-  window.addEventListener('load', () => {
-    createParticles();
-    initFormValidation();
-    
-    // Use Intersection Observer to trigger stats animation when in view
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateStats();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      
-      observer.observe(statsSection);
+}
+// Counter for stats section
+function animateMainCounters() {
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(c => {
+    const target = parseInt(c.getAttribute('data-target'));
+    let val = 0;
+    const inc = target / 45;
+    const timer = setInterval(() => {
+      val += inc;
+      if(val >= target) { c.innerText = target; clearInterval(timer); }
+      else c.innerText = Math.floor(val);
+    }, 30);
+  });
+}
+// Intersection Observer for both
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      animateHeroNumbers();
+      animateMainCounters();
+      statObserver.disconnect();
     }
   });
+}, { threshold: 0.3 });
+const statsHeroSec = document.querySelector('.hero-stats');
+if(statsHeroSec) statObserver.observe(statsHeroSec);
+
+// ========== THREE.JS INTERACTIVE MOTION GRAPHICS ==========
+const canvas = document.getElementById('webgl-canvas');
+if(canvas) {
+  const scene = new THREE.Scene();
+  scene.background = null;
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 12;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  
+  // Particles system - futuristic wave
+  const particlesGeometry = new THREE.BufferGeometry();
+  const particlesCount = 2500;
+  const posArray = new Float32Array(particlesCount * 3);
+  for(let i=0; i<particlesCount; i++) {
+    posArray[i*3] = (Math.random() - 0.5) * 30;
+    posArray[i*3+1] = (Math.random() - 0.5) * 20;
+    posArray[i*3+2] = (Math.random() - 0.5) * 20 - 10;
+  }
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particlesMaterial = new THREE.PointsMaterial({ color: 0x2d1bff, size: 0.08, transparent: true, blending: THREE.AdditiveBlending });
+  const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+  scene.add(particlesMesh);
+  
+  // Glowing torus knot
+  const knotGeo = new THREE.TorusKnotGeometry(1.6, 0.35, 200, 32, 3, 4);
+  const knotMat = new THREE.MeshStandardMaterial({ color: 0x00f2ff, emissive: 0x2d1bff, emissiveIntensity: 0.8, metalness: 0.8, roughness: 0.2 });
+  const knot = new THREE.Mesh(knotGeo, knotMat);
+  scene.add(knot);
+  
+  // Additional floating rings
+  const ringGeo = new THREE.TorusGeometry(2.2, 0.08, 64, 300);
+  const ringMat = new THREE.MeshStandardMaterial({ color: 0x2d1bff, emissive: 0x2d1bff });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  scene.add(ring);
+  
+  // Lights
+  const ambientLight = new THREE.AmbientLight(0x111122);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x2d1bff, 1.2);
+  pointLight.position.set(3,3,4);
+  scene.add(pointLight);
+  const backLight = new THREE.PointLight(0x00f2ff, 0.8);
+  backLight.position.set(-2,1,-5);
+  scene.add(backLight);
+  
+  let time = 0;
+  function animate3D() {
+    requestAnimationFrame(animate3D);
+    time += 0.008;
+    knot.rotation.x = time * 0.8;
+    knot.rotation.y = time * 0.5;
+    ring.rotation.x = time * 0.3;
+    ring.rotation.z = time * 0.4;
+    particlesMesh.rotation.y = time * 0.1;
+    particlesMesh.rotation.x = Math.sin(time * 0.2) * 0.2;
+    camera.position.z = 12 + Math.sin(time * 0.2) * 0.2;
+    renderer.render(scene, camera);
+  }
+  animate3D();
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+
+// GSAP scroll animations
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.service-card-neon', { scrollTrigger: { trigger: '.services-section', start: 'top 80%' }, y: 70, opacity: 0, duration: 0.8, stagger: 0.15 });
+gsap.from('.stat-block', { scrollTrigger: { trigger: '.stats-section-2026', start: 'top 70%' }, scale: 0.8, opacity: 0, duration: 0.6, stagger: 0.1 });
+gsap.from('.motion-preview', { scrollTrigger: { trigger: '.innovation-showreel', start: 'top 75%' }, scale: 0.9, opacity: 0, duration: 1 });
