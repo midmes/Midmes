@@ -158,4 +158,4 @@ if (canvas) {
 gsap.registerPlugin(ScrollTrigger);
 gsap.from('.service-card-neon', { scrollTrigger: { trigger: '.services-section', start: 'top 80%' }, y: 50, opacity: 0, duration: 0.7, stagger: 0.12 });
 gsap.from('.stat-block', { scrollTrigger: { trigger: '.stats-section-2026', start: 'top 75%' }, scale: 0.9, opacity: 0, duration: 0.5, stagger: 0.1 });
-gsap.from('.motion-preview', { scrollTrigger: { trigger: '.innovation-showreel', start: 'top 80%' }, scale: 0.95, opacity: 0, duration: 0.8 });
+gsap.from('.testimonial-card', { scrollTrigger: { trigger: '.testimonial-section', start: 'top 80%' }, y: 40, opacity: 0, duration: 0.7, stagger: 0.15 });
