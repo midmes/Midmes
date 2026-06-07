@@ -214,14 +214,14 @@ nav a:hover::after { width: 100%; }
   margin-top: 8px;
 }
 
-/* TESTIMONIAL SECTION - FULLY VISIBLE */
-.testimonial-section {
+/* Innovation Section - FULLY VISIBLE */
+.Innovation-Section {
   padding: 100px 0;
   background: #010105;
   position: relative;
   z-index: 10;
 }
-.testimonial-card {
+.Innovation-card {
   background: rgba(10, 10, 25, 0.8);
   backdrop-filter: blur(8px);
   border-radius: 28px;
@@ -231,24 +231,24 @@ nav a:hover::after { width: 100%; }
   height: 100%;
   text-align: center;
 }
-.testimonial-card:hover {
+.Innovation-card:hover {
   transform: translateY(-6px);
   border-color: var(--accent-cyan);
 }
-.testimonial-card i {
+.Innovation-card i {
   font-size: 32px;
   color: var(--accent-cyan);
   margin-bottom: 20px;
   opacity: 0.7;
 }
-.testimonial-card p {
+.Innovation-card p {
   font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
   margin-bottom: 20px;
   font-style: italic;
 }
-.testimonial-card h4 {
+.Innovation-card h4 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent-cyan);
