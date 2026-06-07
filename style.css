@@ -214,45 +214,48 @@ nav a:hover::after { width: 100%; }
   margin-top: 8px;
 }
 
-/* Innovation Section - FULLY VISIBLE */
-.Innovation-Section {
+/* INNOVATION SECTION - FIXED TO MATCH OTHER SECTIONS */
+.innovation-section {
   padding: 100px 0;
   background: #010105;
   position: relative;
   z-index: 10;
 }
-.Innovation-card {
-  background: rgba(10, 10, 25, 0.8);
+.innovation-card {
+  background: rgba(15, 15, 35, 0.85);
   backdrop-filter: blur(8px);
   border-radius: 28px;
-  padding: 32px;
-  border: 1px solid rgba(45, 27, 255, 0.3);
+  padding: 32px 24px;
   transition: 0.3s;
-  height: 100%;
+  border: 1px solid rgba(45, 27, 255, 0.3);
   text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.Innovation-card:hover {
-  transform: translateY(-6px);
+.innovation-card:hover {
+  transform: translateY(-8px);
   border-color: var(--accent-cyan);
+  box-shadow: 0 15px 30px -10px rgba(45,27,255,0.3);
 }
-.Innovation-card i {
-  font-size: 32px;
-  color: var(--accent-cyan);
+.innovation-icon {
+  font-size: 48px;
   margin-bottom: 20px;
-  opacity: 0.7;
+  background: linear-gradient(145deg, #2d1bff, #00f2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.Innovation-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ddd;
-  margin-bottom: 20px;
-  font-style: italic;
+.innovation-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--text-white);
 }
-.Innovation-card h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--accent-cyan);
-  margin-top: 10px;
+.innovation-card p {
+  color: #c0c0e0;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* CTA SECTION */
@@ -353,7 +356,7 @@ footer {
 }
 @media (max-width: 768px) {
   .stat-digit { font-size: 2.2rem; }
-  .service-card, .testimonial-card { margin-bottom: 20px; }
+  .service-card, .innovation-card { margin-bottom: 20px; }
   .section-title h2 { font-size: 2rem; }
   .cta-section h2 { font-size: 1.5rem; }
 }
