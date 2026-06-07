@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact MIDMES | Digital Marketing Agency - Get a Free Quote</title>
+  <title>Contact MIDMES | Digital Marketing Agency - Get a Free Consultation</title>
   <meta name="description" content="Contact MIDMES for expert web design, SEO, branding, and digital advertising. Request a free consultation today.">
   <meta name="keywords" content="contact MIDMES, digital marketing agency Ethiopia, web design quote, SEO services, branding agency Addis Ababa">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -36,16 +36,35 @@
       <div class="row">
         <div class="col-lg-8 mx-auto" data-aos="fade-up">
           <div class="contact-form" style="background: rgba(10,10,30,0.6); backdrop-filter: blur(12px); border-radius: 40px; padding: 40px;">
+            <!-- FIXED FORM WITH PROPER REDIRECT -->
             <form action="https://formsubmit.co/contactmidmes@gmail.com" method="POST">
               <input type="hidden" name="_captcha" value="false">
+              <!-- Use the full URL of your thank-you page - CHANGE THIS TO YOUR ACTUAL DOMAIN -->
               <input type="hidden" name="_next" value="thank-you.html">
+              <!-- Add this to get better email formatting -->
+              <input type="hidden" name="_template" value="table">
+              <!-- Add this to avoid spam -->
+              <input type="hidden" name="_subject" value="New Contact Form Submission from MIDMES Website!">
+              
+              <div class="mb-4">
                 <input type="text" class="form-control" name="name" placeholder="Full Name" required style="background: #111; border: 1px solid #2d1bff; border-radius: 60px; padding: 14px 20px; color: white;">
               </div>
               <div class="mb-4">
                 <input type="email" class="form-control" name="email" placeholder="Email Address" required style="background: #111; border: 1px solid #2d1bff; border-radius: 60px; padding: 14px 20px; color: white;">
               </div>
               <div class="mb-4">
-                <input type="text" class="form-control" name="phone" placeholder="Phone Number (optional)" style="background: #111; border: 1px solid #2d1bff; border-radius: 60px; padding: 14px 20px; color: white;">
+                <input type="text" class="form-control" name="phone" placeholder="Phone Number" style="background: #111; border: 1px solid #2d1bff; border-radius: 60px; padding: 14px 20px; color: white;">
+              </div>
+              <div class="mb-4">
+                <select class="form-control" name="service" style="background: #111; border: 1px solid #2d1bff; border-radius: 60px; padding: 14px 20px; color: white;">
+                  <option value="" disabled selected>Select a service (optional)</option>
+                  <option value="Web Design">Web Design & Development</option>
+                  <option value="SEO">SEO Services</option>
+                  <option value="Social Media">Social Media Management</option>
+                  <option value="Digital Ads">Digital Advertising</option>
+                  <option value="Branding">Branding & Identity</option>
+                  <option value="Other">Other / Not Sure</option>
+                </select>
               </div>
               <div class="mb-4">
                 <textarea class="form-control" rows="5" name="message" placeholder="Tell us about your project..." required style="background: #111; border: 1px solid #2d1bff; border-radius: 28px; padding: 16px; color: white;"></textarea>
@@ -60,17 +79,17 @@
       <div class="row mt-5 text-center">
         <div class="col-md-4" data-aos="fade-up">
           <i class="fas fa-envelope fa-2x gradient-text"></i>
-          <h4 class="mt-2">Email</h4>
+          <h4 class="mt-2">Email Us</h4>
           <p>contactmidmes@gmail.com</p>
         </div>
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <i class="fas fa-phone-alt fa-2x gradient-text"></i>
-          <h4 class="mt-2">Phone / WhatsApp</h4>
+          <h4 class="mt-2">Call / WhatsApp</h4>
           <p>+251 979 029 768</p>
         </div>
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <i class="fas fa-map-marker-alt fa-2x gradient-text"></i>
-          <h4 class="mt-2">Location</h4>
+          <h4 class="mt-2">Visit Us</h4>
           <p>Addis Ababa, Ethiopia</p>
         </div>
       </div>
@@ -87,7 +106,7 @@
         <a href="https://t.me/midmes" target="_blank"><i class="fab fa-telegram-plane"></i></a>
         <a href="https://www.tiktok.com/@midmes" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
-      <div class="copyright"><p>© 2026 MIDMES Digital Agency. All rights reserved.</p><p>Addis Ababa, Ethiopia</p></div>
+      <div class="copyright"><p>© MIDMES Digital Agency. All rights reserved.</p><p>Addis Ababa, Ethiopia</p></div>
     </div>
   </footer>
 
